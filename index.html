@@ -23,24 +23,26 @@
 </head>
 <body>
 
-<div id="content">
+	<div id="content">
 
-	<canvas id="canvas" width="400px" height="200px">
-		
-	</canvas>
+		<canvas id="canvas" width="400px" height="200px">
+			
+		</canvas>
 
-</div>
+		<div id="buttons">
+			<input id="tags_input" type="text">
+		</div>
 
-<div id="buttons">
-<input id="tags_input" type="text">
-	
-</div>
-
-<input type="file" name="img"  accept="image/png, image/jpeg">
-<button onclick="desenharFoto()">Enviar</button>
+	</div>
 
 
-<script type="text/javascript" src="./canvas_box.js"></script>
-<script type="text/javascript" src="./info_certi.js"></script>
+	<div id="certi">
+
+		<input type="file" name="img"  accept="image/png, image/jpeg">
+		<button onclick="desenharFoto()">Enviar</button>	
+	</div>
+
+	<script type="text/javascript" src="./canvas_box.js"></script>
+	<script type="text/javascript" src="./info_certi.js"></script>
 </body>
 </html>
