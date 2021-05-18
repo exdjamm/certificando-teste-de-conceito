@@ -1,0 +1,22 @@
+*{
+	position: relative;
+	margin:0;
+	padding: 0;
+}
+
+
+img{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#content{
+	margin: 75px;
+}
+
+#canvas{
+	border: 1px solid;
+	position: relative;
+	z-index: 10;
+}
