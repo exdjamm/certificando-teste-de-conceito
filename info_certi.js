@@ -14,7 +14,9 @@ const updateButtons = (value) => {
 }
 
 tasgInput.addEventListener('keydown', (e) => { 
-	if(e.key == "Enter"){
+	const value = e.target.value
+
+	if((e.key == "Enter") && (value != "")){
 		tags.pushAsync(e.target.value)
 		.then(updateButtons)
 	}

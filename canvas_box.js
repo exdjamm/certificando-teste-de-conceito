@@ -72,21 +72,27 @@ const updateMove = (e) => {
 }
 
 
-const input = document.querySelector("input")
+const input = document.querySelector("#certi input")
 
 function desenharFoto() {
 	const file = input.files[0];
 
 	base_image = new Image();
 	base_image.src = URL.createObjectURL(file);
-	base_image.onload = function(){
-		canvas.width = base_image.width
-		canvas.height = base_image.height
 
-		offSet = canvas.getBoundingClientRect()
+	base_image.onloadend = function(){
 
-		ctx.strokeStyle = '#000';
-		ctx.lineWidth = 4;
+		setTimeout(() => {
+			canvas.width = base_image.width
+			canvas.height = base_image.height
+
+			offSet = canvas.getBoundingClientRect()
+
+			ctx.strokeStyle = '#000';
+			ctx.lineWidth = 4;
+
+		}, 0)
+
 
 		document.querySelector("#content").appendChild(base_image)
 		// ctx.drawImage(base_image, 0, 0);
