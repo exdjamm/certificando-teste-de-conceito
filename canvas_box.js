@@ -18,7 +18,8 @@ let data = selections[i]
 const newSelection = () => {
 	return {
 		initPos: {x:0, y:0},
-		endPos: {x:0, y:0}
+		endPos: {x:0, y:0},
+		color: `rgb(${getRandomByte()}, ${getRandomByte()}, ${getRandomByte()})`
 	}
 }
 
@@ -36,6 +37,7 @@ function updateDraw() {
 		ctx.clearRect(0, 0, canvas.width, canvas.height)
 		// desenharFoto()
 		Object.values(selections).forEach((data)=> {
+			ctx.strokeStyle = data.color;
 			ctx.strokeRect(data.initPos.x, data.initPos.y, data.endPos.x, data.endPos.y)
 		})
 		
