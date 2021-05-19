@@ -1,4 +1,19 @@
 const tasgInput = document.querySelector('#tags_input')
+const corzinhaInput = document.querySelector("#corzinha")
+
+
+corzinhaInput.addEventListener("input",  ({target}) =>{
+	selections[i].color = target.value
+
+
+
+	const index = tags.indexOf(i)
+	const button = document.querySelectorAll('.button')[index]
+	button.style.color = selections[i].color
+
+	reDraw()
+	
+})
 
 let tags = []
 
@@ -13,7 +28,7 @@ const updateButtons = (value) => {
 
 	newButton.addEventListener('click', ({target}) => {
 		const value = target.innerText
-
+		i = value
 		data = selections[value]
 	})
 

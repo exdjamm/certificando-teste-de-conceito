@@ -4,7 +4,6 @@ const canvas = document.querySelector("#canvas")
 let  offSet = canvas.getBoundingClientRect()
 
 let ctx = canvas.getContext('2d');
-ctx.strokeStyle = '#000';
 ctx.lineWidth = px;
 
 // Values
@@ -19,7 +18,7 @@ const newSelection = () => {
 	return {
 		initPos: {x:0, y:0},
 		endPos: {x:0, y:0},
-		color: `rgb(${getRandomByte()}, ${getRandomByte()}, ${getRandomByte()})`
+		color: `#000`
 	}
 }
 
@@ -30,6 +29,15 @@ const setNew = (value) => {
 
 const setNewEnd = (value) => {
 	edit = false
+}
+
+function reDraw() {
+	ctx.clearRect(0, 0, canvas.width, canvas.height)
+	// desenharFoto()
+	Object.values(selections).forEach((data)=> {
+		ctx.strokeStyle = data.color;
+		ctx.strokeRect(data.initPos.x, data.initPos.y, data.endPos.x, data.endPos.y)
+	})
 }
 
 function updateDraw() {

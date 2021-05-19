@@ -19,10 +19,6 @@
     	})
     
 	}
-
-	function getRandomByte() {
- 		return Math.random() * (255);
-	}	
 	</script>
 </head>
 <body>
@@ -32,6 +28,9 @@
 		<canvas id="canvas" width="400px" height="200px">
 			
 		</canvas>
+
+		<label for="favcolor">Select your favorite color:</label>
+		<input type="color" id="corzinha" name="favcolor" value="#ff0000">
 
 		<div id="buttons">
 			<input id="tags_input" type="text">
